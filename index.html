@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Acesso - Indústrias Wayne</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema de Controle de Acesso</h1>
+    <form id="loginForm">
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Entrar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Restrita - Indústrias Wayne</title>
+</head>
+<body>
+    <h1>Página Restrita</h1>
+    <p>Bem-vindo, <span id="usernameDisplay"></span></p>
+    <p>Acesso autorizado para a sua função!</p>
+
+    <button id="logoutButton">Sair</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Recursos - Indústrias Wayne</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gestão de Recursos - Indústrias Wayne</h1>
+
+    <p>Bem-vindo, <span id="usernameDisplay"></span></p>
+    <p><strong>Papel:</strong> <span id="roleDisplay"></span></p>
+    
+    <button id="logoutButton">Sair</button>
+
+    <!-- Interface de gerenciamento de recursos -->
+    <h2>Inventário de Recursos</h2>
+
+    <!-- Recursos -->
+    <div class="resources-section">
+        <h3>Equipamentos</h3>
+        <button id="addEquipmentBtn">Adicionar Equipamento</button>
+        <ul id="equipmentList"></ul>
+        
+        <h3>Veículos</h3>
+        <button id="addVehicleBtn">Adicionar Veículo</button>
+        <ul id="vehicleList"></ul>
+        
+        <h3>Dispositivos de Segurança</h3>
+        <button id="addDeviceBtn">Adicionar Dispositivo</button>
+        <ul id="deviceList"></ul>
+    </div>
+
+    <!-- Modal para adicionar/editar recursos -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Adicionar Recurso</h3>
+            <label for="resourceName">Nome:</label>
+            <input type="text" id="resourceName" placeholder="Nome do recurso" required>
+            
+            <label for="resourceDescription">Descrição:</label>
+            <input type="text" id="resourceDescription" placeholder="Descrição do recurso" required>
+            
+            <button id="saveResourceBtn">Salvar</button>
+            <button id="cancelModalBtn">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Recursos - Indústrias Wayne</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gestão de Recursos - Indústrias Wayne</h1>
+
+    <p>Bem-vindo, <span id="usernameDisplay"></span></p>
+    <p><strong>Papel:</strong> <span id="roleDisplay"></span></p>
+    
+    <button id="logoutButton">Sair</button>
+
+    <!-- Interface de gerenciamento de recursos -->
+    <h2>Inventário de Recursos</h2>
+
+    <!-- Recursos -->
+    <div class="resources-section">
+        <h3>Equipamentos</h3>
+        <button id="addEquipmentBtn" class="admin-action">Adicionar Equipamento</button>
+        <ul id="equipmentList"></ul>
+        
+        <h3>Veículos</h3>
+        <button id="addVehicleBtn" class="admin-action">Adicionar Veículo</button>
+        <ul id="vehicleList"></ul>
+        
+        <h3>Dispositivos de Segurança</h3>
+        <button id="addDeviceBtn" class="admin-action">Adicionar Dispositivo</button>
+        <ul id="deviceList"></ul>
+    </div>
+
+    <!-- Modal para adicionar/editar recursos -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Adicionar Recurso</h3>
+            <label for="resourceName">Nome:</label>
+            <input type="text" id="resourceName" placeholder="Nome do recurso" required>
+            
+            <label
+
+            <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - Indústrias Wayne</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Importando Chart.js para gráficos -->
+</head>
+<body>
+    <header>
+        <h1>Painel de Controle - Indústrias Wayne</h1>
+        <p>Bem-vindo, <span id="usernameDisplay"></span></p>
+        <p><strong>Papel:</strong> <span id="roleDisplay"></span></p>
+        <button id="logoutButton">Sair</button>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Indicadores de Segurança -->
+        <div class="card">
+            <h2>Segurança</h2>
+            <p>Incidentes hoje: <span id="securityIncidents">0</span></p>
+            <p>Alertas ativos: <span id="activeAlerts">0</span></p>
+            <p>Dispositivos de Segurança Funcionando: <span id="securityDevices">0</span></p>
+        </div>
+
+        <!-- Resumo de Recursos -->
+        <div class="card">
+            <h2>Recursos</h2>
+            <p>Equipamentos: <span id="equipmentCount">0</span></p>
+            <p>Veículos: <span id="vehicleCount">0</span></p>
+            <p>Dispositivos de Segurança: <span id="devicesCount">0</span></p>
+        </div>
+
+        <!-- Atividades Recentes -->
+        <div class="card">
+            <h2>Atividades Recentes</h2>
+            <canvas id="activityChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Gráfico de segurança -->
+        <div class="card">
+            <h2>Incidentes de Segurança</h2>
+            <canvas id="securityChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - Wayne Enterprises</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Painel de Controle - Wayne Enterprises</h1>
+        <p>Bem-vindo, <span id="usernameDisplay"></span></p>
+        <p><strong>Papel:</strong> <span id="roleDisplay"></span></p>
+        <button id="logoutButton">Sair</button>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Indicadores de Segurança -->
+        <div class="card">
+            <h2>Segurança em Gotham</h2>
+            <p>Incidentes detectados: <span id="securityIncidents">0</span></p>
+            <p>Alertas ativos em Gotham: <span id="activeAlerts">0</span></p>
+            <p>Dispositivos de Vigilância: <span id="securityDevices">0</span></p>
+        </div>
+
+        <!-- Projetos e Recursos -->
+        <div class="card">
+            <h2>Projetos de Pesquisa</h2>
+            <p>Tecnologias ativas: <span id="activeProjects">3</span></p>
+            <p>Equipamentos tecnológicos: <span id="techEquipment">50</span></p>
+            <p>Veículos de Alta Tecnologia: <span id="batVehicles">2</span></p>
+        </div>
+
+        <!-- Atividades Recentes -->
+        <div class="card">
+            <h2>Atividades Recentes</h2>
+            <canvas id="activityChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Gráfico de Segurança -->
+        <div class="card">
+            <h2>Monitoramento de Segurança</h2>
+            <canvas id="securityChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - Wayne Enterprises</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Painel de Controle - Wayne Enterprises</h1>
+        <p>Bem-vindo, <span id="usernameDisplay"></span></p>
+        <p><strong>Papel:</strong> <span id="roleDisplay"></span></p>
+        <button id="logoutButton">Sair</button>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Informações Institucionais da Wayne Enterprises -->
+        <div class="card" id="info-card">
+            <h2>Informações da Wayne Enterprises</h2>
+            <p><strong>Nome Oficial:</strong> Empresas Wayne</p>
+            <p><strong>Nome Original:</strong> Wayne Enterprises</p>
+            <p><strong>Outros Nomes:</strong> Waynecorp</p>
+            <p><strong>Status:</strong> Ativa</p>
+            <p><strong>Identidade:</strong> Pública</p>
+            <p><strong>Universo:</strong> Terra-Dois, Nova Terra, Terra Principal, Burtonverso, UADC, Jovens Titãs (Série de TV), Nolanverso, Arkhamverso, Arrowverso, Powerless (Série de TV), Gotham (Série de TV), Universo Estendido da DC</p>
+            <p><strong>Base de Operações:</strong> Gotham City (Sede da Empresa)</p>
+            <p><strong>Inimigos:</strong> LexCorp</p>
+            <p><strong>Líderes:</strong> Bruce Wayne, Lucius Fox (anteriormente Damian Wayne)</p>
+        </div>
+
+        <!-- Indicadores de Segurança -->
+        <div class="card">
+            <h2>Segurança em Gotham</h2>
+            <p>Incidentes detectados: <span id="securityIncidents">0</span></p>
+            <p>Alertas ativos em Gotham: <span id="activeAlerts">0</span></p>
+            <p>Dispositivos de Vigilância: <span id="securityDevices">0</span></p>
+        </div>
+
+        <!-- Projetos e Recursos -->
+        <div class="card">
+            <h2>Projetos de Pesquisa</h2>
+            <p>Tecnologias ativas: <span id="activeProjects">3</span></p>
+            <p>Equipamentos tecnológicos: <span id="techEquipment">50</span></p>
+            <p>Veículos de Alta Tecnologia: <span id="batVehicles">2</span></p>
+        </div>
+
+        <!-- Atividades Recentes -->
+        <div class="card">
+            <h2>Atividades Recentes</h2>
+            <canvas id="activityChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Gráfico de Segurança -->
+        <div class="card">
+            <h2>Monitoramento de Segurança</h2>
+            <canvas id="securityChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - Wayne Enterprises</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Painel de Controle - Wayne Enterprises</h1>
+        <p>Bem-vindo, <span id="usernameDisplay"></span></p>
+        <p><strong>Papel:</strong> <span id="roleDisplay"></span></p>
+        <button id="logoutButton">Sair</button>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Informações Institucionais da Wayne Enterprises -->
+        <div class="card" id="info-card">
+            <h2>Informações da Wayne Enterprises</h2>
+            <p><strong>Nome Oficial:</strong> Empresas Wayne</p>
+            <p><strong>Nome Original:</strong> Wayne Enterprises</p>
+            <p><strong>Outros Nomes:</strong> Waynecorp</p>
+            <p><strong>Status:</strong> Ativa</p>
+            <p><strong>Identidade:</strong> Pública</p>
+            <p><strong>Universo:</strong> Terra-Dois, Nova Terra, Terra Principal, Burtonverso, UADC, Jovens Titãs (Série de TV), Nolanverso, Arkhamverso, Arrowverso, Powerless (Série de TV), Gotham (Série de TV), Universo Estendido da DC</p>
+            <p><strong>Base de Operações:</strong> Gotham City (Sede da Empresa)</p>
+            <p><strong>Inimigos:</strong> LexCorp</p>
+            <p><strong>Líderes:</strong> Bruce Wayne, Lucius Fox (anteriormente Damian Wayne)</p>
+            <p><strong>Valor de Mercado:</strong> $27.400.000,00</p>
+            <p><strong>Fundação:</strong> Fundada por Bruce Wayne logo após a criação da Fundação Wayne</p>
+        </div>
+
+        <!-- História da Wayne Enterprises -->
+        <div class="card" id="history-card">
+            <h2>História das Empresas Wayne</h2>
+            <p><strong>Fundação:</strong> Bruce Wayne fundou as Empresas Wayne logo após a criação da Fundação Wayne. Ele passou a se tornar o presidente da empresa, usando os recursos dela para sua cruzada como Batman.</p>
+            <p><strong>Gestão Inicial:</strong> Para equilibrar suas atividades empresariais e como vigilante, Bruce Wayne colocou os escritórios da Wayne Enterprises no prédio da Fundação Wayne, o que lhe permitia estar próximo de sua base de operações.</p>
+            <p><strong>Lucius Fox:</strong> Quando a carga de trabalho da empresa se tornou muito grande para ser administrada por Bruce sozinho, ele nomeou Lucius Fox como seu segundo em comando, encarregado das finanças e do gerenciamento do estoque da empresa.</p>
+            <p><strong>Crise com Hera Venenosa:</strong> Em um episódio, Hera Venenosa tentou tomar o controle das Empresas Wayne ao hipnotizar todos os membros do conselho, incluindo Bruce. Ela forçou-os a assinar documentos que ajudariam a transferir o controle da empresa para ela. O plano foi frustrado por Batman e Robin, permitindo que Bruce recuperasse o controle da empresa.</p>
+            <p><strong>Renúncia de Bruce Wayne:</strong> Após os eventos com Hera Venenosa, Bruce Wayne renunciou ao cargo de CEO da Wayne Enterprises e da Fundação Wayne, passando o cargo para Lucius Fox, confiando a ele o controle total da empresa em seu nome.</p>
+        </div>
+
+        <!-- Indicadores de Segurança -->
+        <div class="card">
+            <h2>Segurança em Gotham</h2>
+            <p>Incidentes detectados: <span id="securityIncidents">0</span></p>
+            <p>Alertas ativos em Gotham: <span id="activeAlerts">0</span></p>
+            <p>Dispositivos de Vigilância: <span id="securityDevices">0</span></p>
+        </div>
+
+        <!-- Projetos e Recursos -->
+        <div class="card">
+            <h2>Projetos de Pesquisa</h2>
+            <p>Tecnologias ativas: <span id="activeProjects">3</span></p>
+            <p>Equipamentos tecnológicos: <span id="techEquipment">50</span></p>
+            <p>Veículos de Alta Tecnologia: <span id="batVehicles">2</span></p>
+        </div>
+
+        <!-- Atividades Recentes -->
+        <div class="card">
+            <h2>Atividades Recentes</h2>
+            <canvas id="activityChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Gráfico de Segurança -->
+        <div class="card">
+            <h2>Monitoramento de Segurança</h2>
+            <canvas id="securityChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
